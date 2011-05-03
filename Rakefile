@@ -159,8 +159,8 @@ vim_plugin_task "hammer",           "git://github.com/robgleeson/hammer.vim.git"
 end
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
-  sh "find ruby -name '.gitignore' | xargs rm -f"
-  Dir.chdir "ruby/command-t" do
+  sh "find tmp -name '.gitignore' | xargs rm -f"
+  Dir.chdir "tmp/command_t" do
     if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
       sh "/usr/bin/ruby1.8 extconf.rb"
     elsif File.exists?("/usr/bin/ruby") # prefer system rubies
